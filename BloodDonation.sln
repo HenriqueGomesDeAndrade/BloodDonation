@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BloodDonation.Api", "BloodDonation.Api\BloodDonation.Api.csproj", "{4985EFFF-8B9B-4D49-9CCF-8E8F388B3A3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodDonation.Application", "BloodDonation.Application\BloodDonation.Application.csproj", "{93D8A71D-E7F7-4395-A28B-4E6951A89F57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodDonation.Infrastructure", "BloodDonation.Infrastructure\BloodDonation.Infrastructure.csproj", "{6CEABCBC-FE01-4EE5-96AC-000658369F37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodDonation.Domain", "BloodDonation.Domain\BloodDonation.Domain.csproj", "{79756EAD-E91A-4889-A3F8-DE554908D841}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E17591C0-0B34-4074-87BE-B01F8F418C27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{64F3614C-A2F7-4B0A-9626-A79E767BFE0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4985EFFF-8B9B-4D49-9CCF-8E8F388B3A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4985EFFF-8B9B-4D49-9CCF-8E8F388B3A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4985EFFF-8B9B-4D49-9CCF-8E8F388B3A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4985EFFF-8B9B-4D49-9CCF-8E8F388B3A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D8A71D-E7F7-4395-A28B-4E6951A89F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D8A71D-E7F7-4395-A28B-4E6951A89F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D8A71D-E7F7-4395-A28B-4E6951A89F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D8A71D-E7F7-4395-A28B-4E6951A89F57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CEABCBC-FE01-4EE5-96AC-000658369F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CEABCBC-FE01-4EE5-96AC-000658369F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CEABCBC-FE01-4EE5-96AC-000658369F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CEABCBC-FE01-4EE5-96AC-000658369F37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79756EAD-E91A-4889-A3F8-DE554908D841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79756EAD-E91A-4889-A3F8-DE554908D841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79756EAD-E91A-4889-A3F8-DE554908D841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79756EAD-E91A-4889-A3F8-DE554908D841}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4985EFFF-8B9B-4D49-9CCF-8E8F388B3A3E} = {E17591C0-0B34-4074-87BE-B01F8F418C27}
+		{93D8A71D-E7F7-4395-A28B-4E6951A89F57} = {E17591C0-0B34-4074-87BE-B01F8F418C27}
+		{6CEABCBC-FE01-4EE5-96AC-000658369F37} = {E17591C0-0B34-4074-87BE-B01F8F418C27}
+		{79756EAD-E91A-4889-A3F8-DE554908D841} = {E17591C0-0B34-4074-87BE-B01F8F418C27}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD61121B-E060-4781-9106-FEE21B67340D}
+	EndGlobalSection
+EndGlobal
