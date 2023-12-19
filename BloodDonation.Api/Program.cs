@@ -1,4 +1,7 @@
+using BloodDonation.Application.Commands.Donor.CreateDonor;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using MediatR;
+using BloodDonation.Application.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +10,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddApplication();
+
+builder.Services.AddMediatR(config =>
+{
+    config.RegisterServicesFromAssemblyContaining(typeof(CreateDonorCommand));
+});
+
+
 
 builder.Services.AddCors(options =>
 {
