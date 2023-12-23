@@ -1,4 +1,5 @@
-﻿using FluentValidation.AspNetCore;
+﻿using BloodDonation.Domain.Interfaces;
+using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BloodDonation.Application.Configuration
@@ -7,6 +8,7 @@ namespace BloodDonation.Application.Configuration
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+            
 
             //Fluent Validation
             services.AddFluentValidationAutoValidation();

@@ -1,11 +1,12 @@
 ﻿using BloodDonation.Application.ViewModels;
 using BloodDonation.Domain.Enum;
 using BloodDonation.Domain.Result;
+using BloodDonation.Domain.ValueObjects;
 using MediatR;
 
-namespace BloodDonation.Application.Commands.Donor.CreateDonor
+namespace BloodDonation.Application.Commands.Donors.CreateDonor
 {
-    public class CreateDonorCommand : IRequest<Result<DonorViewModel>>
+    public class CreateDonorCommand : IRequest<Result<int>>
     {
         public string FullName { get; set; }
         public string Email { get; set; }
@@ -15,6 +16,6 @@ namespace BloodDonation.Application.Commands.Donor.CreateDonor
         public BloodTypeEnum BloodType { get; set; }
         public RhFactorEnum RhFactor { get; set; }
 
-        public CreateDonorAddressCommand Address { get; set; }
+        public Address Address { get; set; }
     }
 }

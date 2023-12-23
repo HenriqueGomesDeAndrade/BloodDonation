@@ -2,9 +2,9 @@
 using BloodDonation.Domain.Result;
 using MediatR;
 
-namespace BloodDonation.Application.Commands.Donation.CreateDonation
+namespace BloodDonation.Application.Commands.Donations.CreateDonation
 {
-    public class CreateDonationCommand : IRequest<Result<DonationViewModel>>
+    public class CreateDonationCommand : IRequest<Result<int>>
     {
         public int DonorId { get; set; }
         public DateTime DonationDate { get; set; }

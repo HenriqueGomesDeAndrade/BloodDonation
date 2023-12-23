@@ -22,12 +22,12 @@ namespace BloodDonation.Domain.Result
         }
 
         public bool IsSuccessful { get; private set; }
-        public T Value { get; set; }
+        public T Value { get; private set; }
         public ResultError Error { get; private set; }
-        public ResultStatusCodeEnum StatusCode { get; set; }
+        public ResultStatusCodeEnum StatusCode { get; private set; }
 
-        public Result<T> Success(T value) => new Result<T>(value);
-        public Result<T> Failure(ResultError error, ResultStatusCodeEnum statusCode = ResultStatusCodeEnum.BadRequest) => new Result<T>(error, statusCode);
+        public static Result<T> Success(T value) => new(value);
+        public static Result<T> Failure(ResultError error, ResultStatusCodeEnum statusCode = ResultStatusCodeEnum.BadRequest) => new(error, statusCode);
         public object GetFinalObject() => IsSuccessful ? Value : Error;
     }
 }

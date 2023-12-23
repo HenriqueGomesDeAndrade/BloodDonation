@@ -1,5 +1,6 @@
 ﻿using BloodDonation.Domain.Entities;
 using BloodDonation.Domain.Enum;
+using BloodDonation.Domain.ValueObjects;
 
 namespace BloodDonation.Application.ViewModels
 {

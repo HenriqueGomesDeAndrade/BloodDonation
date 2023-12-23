@@ -1,7 +1,8 @@
 ﻿using BloodDonation.Api.Controllers.Base;
-using BloodDonation.Application.Commands.Donor.CreateDonor;
+using BloodDonation.Application.Commands.Donors.CreateDonor;
 using BloodDonation.Application.Queries.Donor.GetAllDonors;
 using BloodDonation.Application.Queries.Donor.GetDonorDonationsById;
+using BloodDonation.Domain.Helpers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,9 +16,9 @@ namespace BloodDonation.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] PageQuery pageQuery)
         {
-            var query = new GetAllDonorsQuery();
+            var query = new GetAllDonorsQuery(pageQuery);
             var result = await _mediator.Send(query);
             return StatusCode((int)result.StatusCode, result.GetFinalObject());
         }

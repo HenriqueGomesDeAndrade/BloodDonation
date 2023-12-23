@@ -1,4 +1,4 @@
-using BloodDonation.Application.Commands.Donor.CreateDonor;
+using BloodDonation.Application.Commands.Donors.CreateDonor;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using MediatR;
 using BloodDonation.Application.Configuration;

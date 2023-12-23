@@ -1,4 +1,5 @@
-﻿using BloodDonation.Application.Commands.Donor.CreateDonor;
+﻿using BloodDonation.Application.Commands.Donors.CreateDonor;
+using BloodDonation.Domain.ValueObjects;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BloodDonation.Application.Validations.Donor
 {
-    public class CreateDonorAddressCommandValidator : AbstractValidator<CreateDonorAddressCommand>
+    public class CreateDonorAddressValidator : AbstractValidator<Address>
     {
-        public CreateDonorAddressCommandValidator()
+        public CreateDonorAddressValidator()
         {
             RuleFor(x => x.PublicArea)
                 .NotNull();
@@ -22,9 +23,6 @@ namespace BloodDonation.Application.Validations.Donor
                 .NotNull();
 
             RuleFor(x => x.ZipCode)
-                .NotNull();
-
-            RuleFor(x => x.DonorId)
                 .NotNull();
         }
     }

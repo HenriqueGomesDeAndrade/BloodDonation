@@ -1,4 +1,4 @@
-﻿using BloodDonation.Application.Commands.Donor.CreateDonor;
+﻿using BloodDonation.Application.Commands.Donors.CreateDonor;
 using BloodDonation.Application.Errors;
 using FluentValidation;
 

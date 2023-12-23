@@ -11,4 +11,8 @@
     <Folder Include="Repositories\Configurations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BloodDonation.Domain\BloodDonation.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

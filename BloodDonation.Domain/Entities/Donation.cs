@@ -8,10 +8,18 @@ namespace BloodDonation.Domain.Entities
 {
     public class Donation
     {
-        public int Id { get; set; }
-        public int DonorId { get; set; }
-        public DateTime DonationDate { get; set; }
-        public int QuantityInMililiters { get; set; }
-        public Donor Donor { get; set; }
+        public Donation(int id, int donorId, DateTime donationDate, int quantityInMililiters)
+        {
+            Id = id;
+            DonorId = donorId;
+            DonationDate = donationDate;
+            QuantityInMililiters = quantityInMililiters;
+        }
+
+        public int Id { get; private set; }
+        public int DonorId { get; private set; }
+        public DateTime DonationDate { get; private set; }
+        public int QuantityInMililiters { get; private set; }
+        public Donor Donor { get; private set; }
     }
 }

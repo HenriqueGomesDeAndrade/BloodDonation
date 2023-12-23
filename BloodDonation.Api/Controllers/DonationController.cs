@@ -1,5 +1,5 @@
 ﻿using BloodDonation.Api.Controllers.Base;
-using BloodDonation.Application.Commands.Donation.CreateDonation;
+using BloodDonation.Application.Commands.Donations.CreateDonation;
 using BloodDonation.Application.Queries.Donation.GetAllDonationsByDateRange;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
