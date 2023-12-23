@@ -1,14 +1,23 @@
 ﻿using BloodDonation.Application.ViewModels;
+using BloodDonation.Domain.Interfaces;
 using BloodDonation.Domain.Result;
 using MediatR;
 
-namespace BloodDonation.Application.Queries.BloodStorage.GetAllBloodStorage
+namespace BloodDonation.Application.Queries.BloodStorages.GetAllBloodStorage
 {
     public class GetAllBloodStorageQueryHandler : IRequestHandler<GetAllBloodStorageQuery, Result<List<BloodStorageViewModel>>>
     {
-        public Task<Result<List<BloodStorageViewModel>>> Handle(GetAllBloodStorageQuery request, CancellationToken cancellationToken)
+        private readonly IUnitOfWork _unitOfWork;
+
+        public GetAllBloodStorageQueryHandler(IUnitOfWork unitOfWork)
         {
-            throw new NotImplementedException();
+            _unitOfWork = unitOfWork;
+        }
+
+        public async Task<Result<List<BloodStorageViewModel>>> Handle(GetAllBloodStorageQuery request, CancellationToken cancellationToken)
+        {
+            var bloodStorageList = await _unitOfWork.BloodStorage.GetAllAsync(request.PageQuery.Top, request.PageQuery.Skip);
+            return Result<List<BloodStorageViewModel>>.Success(bloodStorageList.Select(bs => (BloodStorageViewModel)bs).ToList());
         }
     }
 }

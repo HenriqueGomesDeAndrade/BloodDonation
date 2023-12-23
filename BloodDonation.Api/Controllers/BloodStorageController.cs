@@ -1,6 +1,6 @@
 ﻿using BloodDonation.Api.Controllers.Base;
-using BloodDonation.Application.Queries.BloodStorage.GetAllBloodStorage;
-using BloodDonation.Application.Queries.BloodStorage.GetAllBloodStorageByType;
+using BloodDonation.Application.Queries.BloodStorages.GetAllBloodStorage;
+using BloodDonation.Application.Queries.BloodStorages.GetAllBloodStorageByType;
 using BloodDonation.Domain.Enum;
 using BloodDonation.Domain.Helpers;
 using MediatR;

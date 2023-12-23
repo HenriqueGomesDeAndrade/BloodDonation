@@ -1,4 +1,5 @@
-﻿using BloodDonation.Domain.Enum;
+﻿using BloodDonation.Domain.Entities;
+using BloodDonation.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,17 @@ namespace BloodDonation.Application.ViewModels
         public BloodTypeEnum BloodType { get; set; }
         public RhFactorEnum RhFactor { get; set; }
         public int QuantityInMililiters { get; set; }
+
+
+        public static implicit operator BloodStorageViewModel(BloodStorage bloodStorage)
+        {
+            return new BloodStorageViewModel 
+            {
+                Id = bloodStorage.Id,
+                BloodType = bloodStorage.BloodType,
+                RhFactor = bloodStorage.RhFactor,
+                QuantityInMililiters = bloodStorage.QuantityInMililiters
+            };
+        }
     }
 }

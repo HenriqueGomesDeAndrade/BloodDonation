@@ -4,7 +4,7 @@ using BloodDonation.Domain.Helpers;
 using BloodDonation.Domain.Result;
 using MediatR;
 
-namespace BloodDonation.Application.Queries.BloodStorage.GetAllBloodStorageByType
+namespace BloodDonation.Application.Queries.BloodStorages.GetAllBloodStorageByType
 {
     public class GetAllBloodStorageByTypeQuery : IRequest<Result<List<BloodStorageViewModel>>>
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BloodDonation.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,16 @@ namespace BloodDonation.Application.ViewModels
         public int DonorId { get; set; }
         public DateTime DonationDate { get; set; }
         public int QuantityInMililiters { get; set; }
+
+        public static implicit operator DonationViewModel(Donation donation)
+        {
+            return new()
+            {
+                Id = donation.Id,
+                DonorId = donation.DonorId,
+                DonationDate = donation.DonationDate,
+                QuantityInMililiters = donation.QuantityInMililiters
+            };
+        }
     }
 }

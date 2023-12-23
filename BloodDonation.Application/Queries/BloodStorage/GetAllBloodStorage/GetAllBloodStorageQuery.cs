@@ -1,9 +1,10 @@
 ﻿using BloodDonation.Application.ViewModels;
+using BloodDonation.Domain.Enum;
 using BloodDonation.Domain.Helpers;
 using BloodDonation.Domain.Result;
 using MediatR;
 
-namespace BloodDonation.Application.Queries.BloodStorage.GetAllBloodStorage
+namespace BloodDonation.Application.Queries.BloodStorages.GetAllBloodStorage
 {
     public class GetAllBloodStorageQuery : IRequest<Result<List<BloodStorageViewModel>>>
     {

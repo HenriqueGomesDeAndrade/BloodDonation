@@ -16,5 +16,22 @@ namespace BloodDonation.Application.ViewModels
         public RhFactorEnum RhFactor { get; set; }
         public List<Donation> Donations { get; set; }
         public Address Address { get; set; }
+
+        public static implicit operator DonorViewModel(Donor donor)
+        {
+            return new()
+            {
+                Id = donor.Id,
+                FullName = donor.FullName,
+                Email = donor.Email,
+                DateOfBirth = donor.DateOfBirth,
+                Gender = donor.Gender,
+                Weight = donor.Weight,
+                BloodType = donor.BloodType,
+                RhFactor = donor.RhFactor,
+                Address = donor.Address,
+                Donations = donor.Donations,
+            };
+        }
     }
 }
