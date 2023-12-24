@@ -36,9 +36,13 @@ namespace BloodDonation.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public Task IncreaseQuantityByType(int quantity, BloodTypeEnum type)
+        public async Task IncreaseQuantityByType(int quantity, BloodTypeEnum type, RhFactorEnum rhFactor)
         {
-            throw new NotImplementedException();
+            var bloodStorage = await _dbContext.BloodStorage.FirstOrDefaultAsync(x => x.BloodType == type && x.RhFactor == rhFactor);
+            if (bloodStorage == null)
+                return;
+
+            bloodStorage.IncreaseQuantity(quantity);
         }
     }
 }

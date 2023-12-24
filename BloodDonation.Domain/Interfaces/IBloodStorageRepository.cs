@@ -12,6 +12,6 @@ namespace BloodDonation.Domain.Interfaces
     {
         Task<List<BloodStorage>> GetAllAsync(int top, int skip);
         Task<List<BloodStorage>> GetAllByTypeAsync(int top, int skip, BloodTypeEnum type);
-        Task IncreaseQuantityByType(int quantity, BloodTypeEnum type);
+        Task IncreaseQuantityByType(int quantity, BloodTypeEnum type, RhFactorEnum rhFactor);
     }
 }

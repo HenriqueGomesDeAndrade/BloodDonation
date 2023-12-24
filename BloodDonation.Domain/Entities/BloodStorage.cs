@@ -22,5 +22,10 @@ namespace BloodDonation.Domain.Entities
         public BloodTypeEnum BloodType { get; private set; }
         public RhFactorEnum RhFactor { get; private set; }
         public int QuantityInMililiters { get; private set; }
+
+        public void IncreaseQuantity(int quantity)
+        {
+            QuantityInMililiters += quantity;
+        }
     }
 }

@@ -19,7 +19,10 @@ namespace BloodDonation.Application.DomainEventHandlers.Donations
 
         public async Task Handle(DonationCreatedEvent notification, CancellationToken cancellationToken)
         {
-            await _unitOfWork.BloodStorage.IncreaseQuantityByType(notification.Donation.QuantityInMililiters, notification.Donation.Donor.BloodType);
+            var donation = notification.Donation;
+            var donor = notification.Donation.Donor;
+
+            await _unitOfWork.BloodStorage.IncreaseQuantityByType(donation.QuantityInMililiters, donor.BloodType, donor.RhFactor);
         }
     }
 }

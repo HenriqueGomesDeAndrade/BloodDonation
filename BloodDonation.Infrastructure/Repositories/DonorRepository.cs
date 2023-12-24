@@ -1,5 +1,7 @@
 ﻿using BloodDonation.Domain.Entities;
 using BloodDonation.Domain.Interfaces;
+using BloodDonation.Infrastructure.Repositories.Base;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,21 +10,31 @@ using System.Threading.Tasks;
 
 namespace BloodDonation.Infrastructure.Repositories
 {
-    internal class DonorRepository : IDonorRepository
+    internal class DonorRepository : BaseRepository, IDonorRepository
     {
-        public Task<int> CreateDonorAsync(Donor donor)
+        public DonorRepository(BloodDonationDbContext dbContext) : base(dbContext)
         {
-            throw new NotImplementedException();
         }
 
-        public Task<List<Donor>> GetAllDonorsAsync(int top, int skip)
+        public async Task<int> CreateDonorAsync(Donor donor)
         {
-            throw new NotImplementedException();
+            await _dbContext.Donor.AddAsync(donor);
+            return donor.Id;
         }
 
-        public Task<Donor> GetDonorByIdAsync(int id)
+        public async Task<List<Donor>> GetAllDonorsAsync(int top, int skip)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Donor
+                .Skip(skip)
+                .Take(top)
+                .AsNoTracking()
+                .ToListAsync();
+        }
+
+        public async Task<Donor> GetDonorByIdAsync(int id)
+        {
+            return await _dbContext.Donor
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
     }
 }
