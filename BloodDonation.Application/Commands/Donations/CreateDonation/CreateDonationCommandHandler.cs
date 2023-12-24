@@ -31,7 +31,6 @@ namespace BloodDonation.Application.Commands.Donations.CreateDonation
 
             await _unitOfWork.BeginTransactionAsync();
             await _unitOfWork.Donation.CreateDonationAsync(donation);
-            await _unitOfWork.BloodStorage.UpdateFromDonation(donation);
             await _unitOfWork.SaveChangesAsync();
             await _unitOfWork.CommitAsync();
 

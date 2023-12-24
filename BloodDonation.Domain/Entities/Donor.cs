@@ -1,9 +1,10 @@
-﻿using BloodDonation.Domain.Enum;
+﻿using BloodDonation.Domain.Entities.Base;
+using BloodDonation.Domain.Enum;
 using BloodDonation.Domain.ValueObjects;
 
 namespace BloodDonation.Domain.Entities
 {
-    public class Donor
+    public class Donor : BaseEntity
     {
         public Donor(int id, string fullName, string email, DateTime dateOfBirth, GenderEnum gender, double weight, BloodTypeEnum bloodType, RhFactorEnum rhFactor, Address address)
         {

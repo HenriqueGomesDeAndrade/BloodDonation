@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BloodDonation.Domain.Entities.Base;
+using BloodDonation.Domain.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BloodDonation.Domain.Entities
 {
-    public class Donation
+    public class Donation : BaseEntity
     {
         public Donation(int id, int donorId, DateTime donationDate, int quantityInMililiters)
         {
@@ -14,6 +16,8 @@ namespace BloodDonation.Domain.Entities
             DonorId = donorId;
             DonationDate = donationDate;
             QuantityInMililiters = quantityInMililiters;
+
+            AddDomainEvent(new DonationCreatedEvent(this));
         }
 
         public int Id { get; private set; }
