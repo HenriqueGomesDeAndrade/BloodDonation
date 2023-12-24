@@ -10,7 +10,7 @@ namespace BloodDonation.Domain.Interfaces
 {
     public interface IDonationRepository
     {
-        Task<List<Donation>> GetAllByDateRangeAsync(DateTime startDate, DateTime endDate);
+        Task<List<Donation>> GetAllByLastDaysAsync(int lastDays);
         Task<int> CreateDonationAsync(Donation donation);
     }
 }

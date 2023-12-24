@@ -22,10 +22,11 @@ namespace BloodDonation.Infrastructure.Repositories
             return donation.Id;
         }
 
-        public async Task<List<Donation>> GetAllByDateRangeAsync(DateTime startDate, DateTime endDate)
+        public async Task<List<Donation>> GetAllByLastDaysAsync(int lastDays)
         {
+            var dateToCompare = DateTime.UtcNow.AddDays(-lastDays);
             return await _dbContext.Donation
-                .Where(x => x.DonationDate > startDate && x.DonationDate < endDate)
+                .Where(x => x.DonationDate > dateToCompare)
                 .AsNoTracking()
                 .ToListAsync();
         }

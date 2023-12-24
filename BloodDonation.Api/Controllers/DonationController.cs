@@ -19,8 +19,8 @@ namespace BloodDonation.Api.Controllers
             return StatusCode((int)result.StatusCode, result.GetFinalObject());
         }
 
-        [HttpGet("GetAllByDateRange")]
-        public async Task<IActionResult> GetByDateRange(GetAllDonationsByDateRangeQuery query)
+        [HttpGet("GetAllByLastDays")]
+        public async Task<IActionResult> GetByDateRange([FromQuery]GetAllDonationsByLastDaysQuery query)
         {
             var result = await _mediator.Send(query);
             return StatusCode((int)result.StatusCode, result.GetFinalObject());

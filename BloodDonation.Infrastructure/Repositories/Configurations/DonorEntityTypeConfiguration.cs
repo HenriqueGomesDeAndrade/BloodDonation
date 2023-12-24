@@ -22,8 +22,7 @@ namespace BloodDonation.Infrastructure.Repositories.Configurations
             builder.Property(d => d.Weight).IsRequired();
             builder.Property(d => d.BloodType).IsRequired();
             builder.Property(d => d.RhFactor).IsRequired();
-            builder.Property(d => d.Address).IsRequired();
-
+            builder.ComplexProperty(d => d.Address).IsRequired();
         }
     }
 }

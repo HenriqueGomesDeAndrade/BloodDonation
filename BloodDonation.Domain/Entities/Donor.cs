@@ -6,6 +6,7 @@ namespace BloodDonation.Domain.Entities
 {
     public class Donor : BaseEntity
     {
+        public Donor() {}
         public Donor(int id, string fullName, string email, DateTime dateOfBirth, GenderEnum gender, double weight, BloodTypeEnum bloodType, RhFactorEnum rhFactor, Address address)
         {
             Id = id;
@@ -39,7 +40,7 @@ namespace BloodDonation.Domain.Entities
 
         public bool IsLastDonationRangeValid()
         {
-            DateTime? lastDonationDate = Donations.OrderBy(d => d.DonationDate).FirstOrDefault()?.DonationDate;
+            DateTime? lastDonationDate = Donations?.OrderBy(d => d.DonationDate).FirstOrDefault()?.DonationDate;
             if (lastDonationDate == null)
                 return true;
 

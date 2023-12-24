@@ -13,10 +13,7 @@ namespace BloodDonation.Infrastructure
     public class BloodDonationDbContext : DbContext
     {
         public BloodDonationDbContext(DbContextOptions<BloodDonationDbContext> options)
-            :base(options)
-        {
-            
-        }
+            :base(options){ }
 
         public DbSet<Donation> Donation { get; set; }
         public DbSet<Donor> Donor { get; set; }

@@ -36,6 +36,9 @@ namespace BloodDonation.Application.Validations.Donor
             RuleFor(x => x.RhFactor)
             .NotNull()
             .IsInEnum();
+
+            RuleFor(x => x.Address)
+                .SetValidator(new CreateDonorAddressValidator());
         }
         
     }

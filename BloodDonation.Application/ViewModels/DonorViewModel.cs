@@ -19,6 +19,8 @@ namespace BloodDonation.Application.ViewModels
 
         public static implicit operator DonorViewModel(Donor donor)
         {
+            if (donor == null) 
+                return null;
             return new()
             {
                 Id = donor.Id,

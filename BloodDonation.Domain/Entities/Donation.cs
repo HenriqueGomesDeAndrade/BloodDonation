@@ -10,6 +10,7 @@ namespace BloodDonation.Domain.Entities
 {
     public class Donation : BaseEntity
     {
+        public Donation() {}
         public Donation(int id, int donorId, DateTime donationDate, int quantityInMililiters)
         {
             Id = id;

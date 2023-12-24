@@ -18,7 +18,7 @@ namespace BloodDonation.Infrastructure.Repositories.Configurations
                 .WithMany(d => d.Donations)
                 .HasForeignKey(d => d.DonorId);
 
-            builder.HasAlternateKey(d => d.DonationDate);
+            builder.HasIndex(d => d.DonationDate);
 
             builder.Property(d => d.DonorId).IsRequired();
             builder.Property(d => d.DonationDate).IsRequired();

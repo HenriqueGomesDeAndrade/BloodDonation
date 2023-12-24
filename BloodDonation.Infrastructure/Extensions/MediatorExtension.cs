@@ -25,7 +25,7 @@ namespace BloodDonation.Infrastructure.Extensions
                 .ToList()
                 .ForEach(entity => entity.Entity.ClearDomainEvents());
 
-            foreach (var domainEvent in domainEntities)
+            foreach (var domainEvent in domainEvents)
                 await mediator.Publish(domainEvent);
         }
     }

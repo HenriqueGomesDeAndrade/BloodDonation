@@ -18,7 +18,7 @@ namespace BloodDonation.Application.Validations.Donation
 
             RuleFor(x => x.DonationDate) 
                 .NotEmpty()
-                .LessThan(DateTime.Now);
+                .LessThanOrEqualTo(DateTime.Now);
 
             RuleFor(x => x.QuantityInMililiters) 
                 .NotEmpty()

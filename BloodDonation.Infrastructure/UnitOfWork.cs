@@ -39,7 +39,6 @@ namespace BloodDonation.Infrastructure
             try
             {
                 await _dbTransaction.CommitAsync();
-
             }
             catch (Exception)
             {

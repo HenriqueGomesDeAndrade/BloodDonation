@@ -18,6 +18,8 @@ namespace BloodDonation.Application.ViewModels
 
         public static implicit operator BloodStorageViewModel(BloodStorage bloodStorage)
         {
+            if (bloodStorage == null) 
+                return null;
             return new BloodStorageViewModel 
             {
                 Id = bloodStorage.Id,

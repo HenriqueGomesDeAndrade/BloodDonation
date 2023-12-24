@@ -10,6 +10,7 @@ namespace BloodDonation.Domain.Entities
 {
     public class BloodStorage : BaseEntity
     {
+        public BloodStorage() {}
         public BloodStorage(int id, BloodTypeEnum bloodType, RhFactorEnum rhFactor, int quantityInMililiters)
         {
             Id = id;
