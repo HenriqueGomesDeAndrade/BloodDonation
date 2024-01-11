@@ -24,7 +24,7 @@ namespace BloodDonation.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAll(int id)
+        public async Task<IActionResult> Get(int id)
         {
             var query = new GetDonorDonationsByIdQuery(id);
             var result = await _mediator.Send(query);

@@ -11,8 +11,23 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)));
+
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo 
+    { 
+        Title = "BloodDonation.API",
+        Version = "v1" ,
+        Contact = new Microsoft.OpenApi.Models.OpenApiContact 
+        {
+            Name = "Henrique Gomes de Andrade",
+            Url = new Uri("https://www.linkedin.com/in/henrique-gomes-de-andrade/")
+        },
+        Description = "Projeto pessoal utilizado para aplicar conceitos sobre desenvolvimento com dotnet, como parte de um desafio mensal"
+    });
+});
+
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
